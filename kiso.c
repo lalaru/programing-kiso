@@ -8,8 +8,12 @@ int main (void){
     printf("変数の値は%dです。\n",x);
 
     return 0;
+    
+}
 
      /*  問題2  */
+#include <stdio.h>
+int main (void){
     int a,b,seki;
 
     printf("2つの整数値を入力しててください。\n");
@@ -22,8 +26,11 @@ int main (void){
     printf("2つの整数値の積の値は%dです。\n",seki);
 
     return 0;
+}
 
     /*  問題３　*/
+#include <stdio.h>
+int main (void){
     int a,b,wariai;
 
     printf("2つの整数値を入力しててください。\n");
@@ -36,8 +43,11 @@ int main (void){
     printf("aはbの%d％です。\n",wariai);
 
     return 0;
+}
 
     /* 　問題４　*/
+#include <stdio.h>
+int main (void){
     float cm;
     
     printf("長さをcmで入力してください：")；
@@ -46,7 +56,8 @@ int main (void){
     printf("それは%.3fインチです\n",cm/2.54);
 
     return 0;
+}
 
 
        
-}
+
