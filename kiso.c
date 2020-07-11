@@ -1,7 +1,6 @@
+ /*  問題１ */
 #include <stdio.h>
 int main (void){
-    /*  問題１ */
-    
     int x;
     x = 12345;
 
