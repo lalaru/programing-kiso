@@ -76,7 +76,7 @@ int main (void){
         if(i==0){
             number[i]=0;
         }
-        else if(i%3==0 || i%10==3){
+        else if(i%3==0 || i%10==3 ||i/100==3 ||(i%100)/10==3){
             number[i]=3;
         }
         else{
