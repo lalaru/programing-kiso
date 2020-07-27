@@ -67,26 +67,32 @@ int main (void){
 }
 
 /* 問題5 */
-#include<stdio.h>
-int main (void){
-    int number[335];
+#include <stdio.h>
+int main(void)
+{
+    int element[335];
     int i,c;
-
-    for(i=0;i<335;i++){
-        if(i==0){
-            number[i]=0;
+    for(i=0;i<335;i++)
+    {
+        if(i==0)
+        {
+            element[i]=0;
         }
-        else if(i%3==0 || i%10==3 ||i/100==3 ||(i%100)/10==3){
-            number[i]=3;
+        else if(i%3==0||i%10==3||i/100==3||(i%100)/10==3)
+        {
+            element[i]=3;
         }
-        else{
-            number[i]=i%10;
+        else
+        {
+            element[i]=i%10;
         }
         if((c=getchar())=='\n'){
-        printf("%d: %d",i,number[i]);
+            printf("%d: %d",i,element[i]);
         }
-
     }
+    printf("\n");
+
     return 0;
 }
+
 /* finish */
