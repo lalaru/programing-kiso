@@ -65,9 +65,9 @@ int main(void){
         d[t]=(a[t]*a[t])+(b[t]*b[t]);
 
         if(t==0){
-            fprintf(file2,"time\tc[t]\td[t]\n");
+            fprintf(file2,"time,c[t],d[t]\n");
         }
-        fprintf(file2,"%.2f\t%f\t%f\n",time[t],c[t],d[t]);
+        fprintf(file2,"%f,%f,%f\n",time[t],c[t],d[t]);
         
     } 
     /*  close data */
