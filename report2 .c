@@ -14,16 +14,15 @@ int main(void){
     if((file1 = fopen("inputdata_win.txt","r"))==NULL){
         
         printf("can't open file inputdata_win.txt\n");
-
         exit(1);
     }
     else{
         printf("open file inputdata_win.txt\n");
     }
 
-    if((file2 = fopen("outputdate.csv","w"))==NULL){
+    if((file2 = fopen("outputdata.csv","w"))==NULL){
         
-        printf("can't open file outputdate.csv\n");
+        printf("can't open file outputdata.csv\n");
 
         exit(1);
     }
@@ -32,25 +31,44 @@ int main(void){
     
     for(t=0;t<51;t++){
         fgets(s,39,file1);
-        printf("%s\n",s);  /*check*/
-        
-    i=0;
-    for(j=0;s[i]!='\t';j++,i++){
-        ts[j]=s[i];
-        ts[j]='\0';
-    }
-    time[t]=atof(ts);
-    
-    printf("%s\n",ts);
-    printf("%f\n",time[t]); 
-    }
 
+        /*  time  */
+        i=0;
+        for(j=0;s[i]!='\t';j++,i++){
+            ts[j]=s[i]+'\0';
+        }
+        time[t]=atof(ts);
+    
+
+        /*  signal_a  */
+        i+=1;
+        for(j=0;s[i]!='\t';j++,i++){
+            as[j]=s[i]+'\0';
+        }
+        a[t]=atof(as);
+        
+        /*  signal_b  */
+        for(j=0;s[i]!='\n';j++,i++){
+            bs[j]=s[i]+'\0';
+        }
+        b[t]=atof(bs);
+
+        /* c[t],d[t] */
+        c[t]=a[t]+b[t];
+        d[t]=(a[t]*a[t])+(b[t]*b[t]);
+
+        if(t==0){
+            fprintf(file2,"time\tc[t]\td[t]\n");
+        }
+        fprintf(file2,"%.2f\t%f\t%f\n",time[t],c[t],d[t]);
+        
+    } 
     /*  close data */
     fclose(file1);
-    printf("close file inputdate_win.txt\n");
+    printf("close file inputdata_win.txt\n");
 
     fclose(file2);
-    printf("close file outputdate.csv\n");
+    printf("close file outputdata.csv\n");
     
     return 0;
     
