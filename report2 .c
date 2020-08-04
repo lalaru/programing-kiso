@@ -1,3 +1,8 @@
+/* Advanced Computer Programming I
+   19T0821U
+   大久保春陽
+   8/4  */
+
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
@@ -8,7 +13,9 @@ int main(void){
     char ts[15],as[15],bs[15];
     double time[51],a[51],b[51],c[51],d[51];
     
-    int  t,i,j;
+    int  t,i,j;  
+    /* name */
+    printf("19T0821U\t大久保春陽\n");
 
     /* file open */
     if((file1 = fopen("inputdata_win.txt","r"))==NULL){
